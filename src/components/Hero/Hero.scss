@@ -41,16 +41,16 @@
     @include bp(lg) {
       position: relative;
       flex-shrink: 0;
-      max-width: 420px;
-      max-height: 60vh;
+      max-width: 440px;
+      max-height: 70vh;
       order: 1;
       z-index: 1;
       margin-right: calc(-1 * var(--space-3xl));
     }
 
     @include bp(xl) {
-      max-width: 460px;
-      max-height: 65vh;
+      max-width: 480px;
+      max-height: 75vh;
       margin-right: calc(-1 * var(--space-4xl));
     }
   }
