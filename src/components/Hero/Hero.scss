@@ -18,11 +18,9 @@
     padding-bottom: var(--space-xl);
 
     @include bp(lg) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
       padding-top: var(--space-xl);
       padding-bottom: var(--space-lg);
+      align-items: flex-start;
     }
   }
 
@@ -38,13 +36,18 @@
     }
 
     @include bp(lg) {
-      flex-shrink: 0;
-      max-width: 600px;
-      margin-right: calc(-1 * var(--space-4xl)); // Negative margin for overlap
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      max-width: 55vw;
+      max-height: 80vh;
+      z-index: 1;
     }
 
     @include bp(xl) {
-      max-width: 650px;
+      max-width: 50vw;
+      right: 8%;
     }
   }
 
@@ -117,7 +120,7 @@
   // === Content Section ===
   &__content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
@@ -127,9 +130,9 @@
 
     @include bp(lg) {
       margin-top: 0;
-      margin-left: var(--space-xl); // Overlap spacing
-      max-width: 550px;
+      max-width: 55%;
       gap: var(--space-md);
+      padding-right: var(--space-2xl);
     }
   }
 
@@ -222,19 +225,21 @@
   // === Quiz Section ===
   &__quiz-kickoff {
     position: relative;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(24px);
     border-radius: var(--radius-xl);
     padding: var(--space-xl);
     box-shadow:
-      var(--shadow-xl),
-      0 0 0 1px rgba(255, 255, 255, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+      0 20px 40px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     transition: all var(--duration-normal) var(--ease-out-cubic);
 
     @include bp(lg) {
       padding: var(--space-lg);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(32px);
     }
 
     &::before {
