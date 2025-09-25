@@ -12,6 +12,18 @@ This project was created during the TED AI Vienna event as a 60-minute vibecodin
 - Rapid prototyping and deployment
 - Production-quality code under time constraints
 
+## 🖼️ Live Application
+
+![Blendo Coffee Subscription App](blendo-coffee-screenshot.png)
+
+*The complete Blendo application featuring the coffee machine video, interactive quiz, and elegant glassmorphism design.*
+
+### 🎬 Interactive Demo
+
+![Blendo Coffee Quiz Demo](blendo-coffee-demo.gif)
+
+*Watch the coffee quiz in action - from initial landing to quiz flow with smooth animations and elegant interactions.*
+
 ## 🚀 Quick Start
 
 ```bash
