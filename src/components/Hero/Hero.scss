@@ -524,6 +524,7 @@
     text-align: center;
     padding-top: var(--space-lg);
     border-top: 1px solid var(--coffee-300);
+    margin-top: var(--space-lg);
 
     @include bp(md) {
       flex-direction: row;
@@ -535,6 +536,9 @@
     @include bp(lg) {
       justify-content: flex-start;
       gap: var(--space-2xl);
+      margin-top: var(--space-xl);
+      margin-left: var(--space-lg);
+      margin-right: var(--space-lg);
     }
   }
 
