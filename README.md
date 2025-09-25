@@ -14,9 +14,11 @@ This project was created during the TED AI Vienna event as a 60-minute vibecodin
 
 ## 🖼️ Live Application
 
-![Blendo Coffee Subscription App](blendo-coffee-screenshot.png)
+[![Blendo Coffee Subscription App](blendo-coffee-screenshot.png)](https://blendo-ted.netlify.app/)
 
 *The complete Blendo application featuring the coffee machine video, interactive quiz, and elegant glassmorphism design.*
+
+**[🚀 Try the Live Demo →](https://blendo-ted.netlify.app/)**
 
 ## 🚀 Quick Start
 
