@@ -137,6 +137,7 @@ const Hero = ({ onQuizStart }) => {
             <div className="hero__brand">
               <h1 className="hero__brand-name font-display">Blendo</h1>
               <p className="hero__tagline">45 seconds to your perfect blend</p>
+              <p className="hero__pricing">Starting at $19/month</p>
             </div>
           </div>
 

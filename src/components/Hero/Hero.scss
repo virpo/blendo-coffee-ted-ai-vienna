@@ -200,6 +200,18 @@
     }
   }
 
+  &__pricing {
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    color: var(--secondary);
+    font-weight: var(--weight-medium);
+    margin: var(--space-xs) 0 0 0;
+    opacity: 0.9;
+
+    @include bp(lg) {
+      font-size: clamp(0.85rem, 1vw, 1.1rem);
+    }
+  }
+
   &__title {
     margin-bottom: var(--space-lg);
     color: var(--text-primary);
@@ -255,8 +267,8 @@
     transition: all var(--duration-normal) var(--ease-out-cubic);
 
     @include bp(lg) {
-      padding: var(--space-sm) var(--space-md);
-      background: rgba(255, 255, 255, 0.95);
+      padding: var(--space-lg) var(--space-xl);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(20px);
     }
 
@@ -291,7 +303,12 @@
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    padding: 0 var(--space-xs);
+
+    @include bp(lg) {
+      margin-bottom: var(--space-lg);
+    }
   }
 
   &__quiz-label {
@@ -320,11 +337,12 @@
 
   &__question {
     border: none;
-    padding: 0;
-    margin: 0 0 var(--space-lg) 0;
+    padding: 0 var(--space-xs);
+    margin: 0 0 var(--space-xl) 0;
 
     @include bp(lg) {
-      margin: 0 0 var(--space-md) 0;
+      margin: 0 0 var(--space-lg) 0;
+      padding: 0 var(--space-sm);
     }
   }
 
@@ -332,18 +350,24 @@
     font-size: var(--text-xl);
     font-weight: var(--weight-semibold);
     color: var(--text-primary);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
     line-height: var(--leading-snug);
 
     @include bp(lg) {
-      margin-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
     }
   }
 
   &__options {
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-md);
+    padding: 0 var(--space-xs);
+
+    @include bp(lg) {
+      padding: 0 var(--space-sm);
+      gap: var(--space-sm);
+    }
   }
 
   &__option {
@@ -452,8 +476,8 @@
   }
 
   &__cta {
-    width: 100%;
-    margin-top: var(--space-sm);
+    width: calc(100% - 2 * var(--space-xs));
+    margin: var(--space-lg) var(--space-xs) 0;
     font-size: var(--text-lg);
     font-weight: var(--weight-semibold);
     padding: var(--space-lg) var(--space-xl);
@@ -470,7 +494,8 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
     @include bp(lg) {
-      margin-top: var(--space-xs);
+      width: calc(100% - 2 * var(--space-sm));
+      margin: var(--space-md) var(--space-sm) 0;
     }
 
     // Shine effect for CTA
