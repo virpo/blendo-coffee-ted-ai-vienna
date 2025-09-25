@@ -29,15 +29,26 @@ const Quiz = () => {
         setSliderValue(existingAnswer);
         setCurrentAnswer(existingAnswer);
       } else {
+        // Radio buttons - ensure existing answer is set
         setCurrentAnswer(existingAnswer);
         setMultiSelectAnswers([]);
       }
     } else {
-      setCurrentAnswer('');
-      setMultiSelectAnswers([]);
-      setSliderValue(3);
+      // No existing answer - reset to defaults
+      if (currentQuestionData.type === 'slider') {
+        // For sliders, set default value and mark as answered
+        const defaultValue = 3;
+        setSliderValue(defaultValue);
+        setCurrentAnswer(defaultValue);
+        // Auto-answer with default value to avoid requiring user interaction
+        actions.answerQuestion(currentQuestion, defaultValue);
+      } else {
+        setCurrentAnswer('');
+        setMultiSelectAnswers([]);
+        setSliderValue(3);
+      }
     }
-  }, [currentQuestion, currentQuestionData, answers]);
+  }, [currentQuestion, currentQuestionData, answers, actions]);
 
   const handleAnswerChange = (value) => {
     if (currentQuestionData.type === 'multi-select') {
@@ -175,9 +186,16 @@ const Quiz = () => {
                           disabled={isDisabled}
                           aria-pressed={isSelected}
                         >
-                          <svg className="quiz__chip-icon" viewBox="0 0 100 100" aria-hidden="true">
-                            <use href={`/assets/flavor_icons.svg#${option.value}`}></use>
-                          </svg>
+                          {/* Fallback to emoji icons for now */}
+                          <div className="quiz__chip-icon quiz__chip-icon--emoji">
+                            {option.value === 'chocolate' && '🍫'}
+                            {option.value === 'caramel' && '🍯'}
+                            {option.value === 'citrus' && '🍊'}
+                            {option.value === 'berry' && '🫐'}
+                            {option.value === 'nutty' && '🥜'}
+                            {option.value === 'floral' && '🌸'}
+                            {option.value === 'spicy' && '🌶️'}
+                          </div>
                           <span className="quiz__chip-label">{option.label}</span>
                         </button>
                       );

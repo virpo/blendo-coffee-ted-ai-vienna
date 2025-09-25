@@ -104,7 +104,7 @@ function quizReducer(state, action) {
         currentQuestion: 1,
         startTime: Date.now(),
         answers: action.firstAnswer ? { 1: action.firstAnswer } : {},
-        progress: action.firstAnswer ? 16.67 : 0
+        progress: action.firstAnswer ? (1 / 6) * 100 : (0 / 6) * 100
       };
 
     case 'ANSWER_QUESTION':
@@ -123,22 +123,36 @@ function quizReducer(state, action) {
         return {
           ...state,
           currentState: QUIZ_STATES.RESULT,
-          completionTime: Date.now()
+          completionTime: Date.now(),
+          progress: 100
         };
       }
+
+      // Calculate progress based on current question position + answered questions
+      const answeredCount = Object.keys(state.answers).length;
+      const questionProgress = ((nextQuestion - 1) / 6) * 100; // Base progress for reaching this question
+      const answerBonus = answeredCount > 0 ? (answeredCount / 6) * 5 : 0; // Small bonus for answers
+      const newProgress = Math.min(questionProgress + answerBonus, 100);
 
       return {
         ...state,
         currentQuestion: nextQuestion,
-        currentState: `question_${nextQuestion}`
+        currentState: `question_${nextQuestion}`,
+        progress: newProgress
       };
 
     case 'PREVIOUS_QUESTION':
       const prevQuestion = Math.max(1, state.currentQuestion - 1);
+      const prevAnsweredCount = Object.keys(state.answers).length;
+      const prevQuestionProgress = ((prevQuestion - 1) / 6) * 100;
+      const prevAnswerBonus = prevAnsweredCount > 0 ? (prevAnsweredCount / 6) * 5 : 0;
+      const prevProgress = Math.min(prevQuestionProgress + prevAnswerBonus, 100);
+
       return {
         ...state,
         currentQuestion: prevQuestion,
-        currentState: prevQuestion === 1 ? QUIZ_STATES.QUESTION_1 : `question_${prevQuestion}`
+        currentState: prevQuestion === 1 ? QUIZ_STATES.QUESTION_1 : `question_${prevQuestion}`,
+        progress: prevProgress
       };
 
     case 'GENERATE_RESULT':
