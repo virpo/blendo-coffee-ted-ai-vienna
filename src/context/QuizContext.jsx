@@ -104,17 +104,16 @@ function quizReducer(state, action) {
         currentQuestion: 1,
         startTime: Date.now(),
         answers: action.firstAnswer ? { 1: action.firstAnswer } : {},
-        progress: action.firstAnswer ? (1 / 6) * 100 : (0 / 6) * 100
+        progress: (1 / 6) * 100 // Always start at Q1 progress (17%)
       };
 
     case 'ANSWER_QUESTION':
       const newAnswers = { ...state.answers, [action.questionId]: action.answer };
-      const progress = (Object.keys(newAnswers).length / 6) * 100;
 
       return {
         ...state,
-        answers: newAnswers,
-        progress
+        answers: newAnswers
+        // Don't update progress here - only update when clicking "Next"
       };
 
     case 'NEXT_QUESTION':
@@ -128,11 +127,8 @@ function quizReducer(state, action) {
         };
       }
 
-      // Calculate progress based on current question position + answered questions
-      const answeredCount = Object.keys(state.answers).length;
-      const questionProgress = ((nextQuestion - 1) / 6) * 100; // Base progress for reaching this question
-      const answerBonus = answeredCount > 0 ? (answeredCount / 6) * 5 : 0; // Small bonus for answers
-      const newProgress = Math.min(questionProgress + answerBonus, 100);
+      // Simple linear progression: each question represents 1/6 of progress
+      const newProgress = (nextQuestion / 6) * 100;
 
       return {
         ...state,
@@ -143,10 +139,8 @@ function quizReducer(state, action) {
 
     case 'PREVIOUS_QUESTION':
       const prevQuestion = Math.max(1, state.currentQuestion - 1);
-      const prevAnsweredCount = Object.keys(state.answers).length;
-      const prevQuestionProgress = ((prevQuestion - 1) / 6) * 100;
-      const prevAnswerBonus = prevAnsweredCount > 0 ? (prevAnsweredCount / 6) * 5 : 0;
-      const prevProgress = Math.min(prevQuestionProgress + prevAnswerBonus, 100);
+      // Simple linear progression: each question represents 1/6 of progress
+      const prevProgress = (prevQuestion / 6) * 100;
 
       return {
         ...state,
@@ -169,18 +163,20 @@ function quizReducer(state, action) {
 
     case 'SKIP_QUESTION':
       const skipAnswers = { ...state.answers, [action.questionId]: 'skipped' };
-      const skipProgress = (Object.keys(skipAnswers).length / 6) * 100;
       const skipNextQuestion = state.currentQuestion + 1;
 
       if (skipNextQuestion > 6) {
         return {
           ...state,
           answers: skipAnswers,
-          progress: skipProgress,
+          progress: 100,
           currentState: QUIZ_STATES.RESULT,
           completionTime: Date.now()
         };
       }
+
+      // Simple linear progression: each question represents 1/6 of progress
+      const skipProgress = (skipNextQuestion / 6) * 100;
 
       return {
         ...state,
