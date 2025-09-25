@@ -19,7 +19,8 @@
 
     @include bp(lg) {
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: center;
       padding-top: var(--space-xl);
       padding-bottom: var(--space-lg);
       gap: 0;
@@ -40,17 +41,17 @@
     @include bp(lg) {
       position: relative;
       flex-shrink: 0;
-      max-width: 450px;
+      max-width: 420px;
       max-height: 60vh;
       order: 1;
       z-index: 1;
-      margin-right: calc(-1 * var(--space-4xl));
+      margin-right: calc(-1 * var(--space-3xl));
     }
 
     @include bp(xl) {
-      max-width: 500px;
+      max-width: 460px;
       max-height: 65vh;
-      margin-right: calc(-1 * var(--space-5xl));
+      margin-right: calc(-1 * var(--space-4xl));
     }
   }
 
@@ -133,16 +134,17 @@
 
     @include bp(lg) {
       margin-top: 0;
-      width: 55%;
-      max-width: 550px;
+      width: 50%;
+      max-width: 480px;
       gap: var(--space-md);
       order: 2;
-      padding-left: var(--space-3xl);
+      padding-left: var(--space-2xl);
     }
 
     @include bp(xl) {
-      width: 50%;
-      padding-left: var(--space-4xl);
+      width: 45%;
+      max-width: 520px;
+      padding-left: var(--space-3xl);
     }
   }
 
@@ -351,22 +353,22 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: var(--space-md) var(--space-lg);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.75) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 60px;
+    min-height: 70px;
     box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.05),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      0 2px 8px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
     overflow: hidden;
 
     @include bp(lg) {
-      padding: var(--space-sm) var(--space-md);
-      min-height: 50px;
+      padding: var(--space-md) var(--space-lg);
+      min-height: 60px;
     }
 
     // Subtle shine effect
@@ -377,19 +379,19 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s ease;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: left 0.6s ease;
       pointer-events: none;
     }
 
     &:hover {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
-      border-color: rgba(255, 183, 77, 0.6);
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.82) 100%);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-1px);
       box-shadow:
-        0 12px 24px rgba(0, 0, 0, 0.08),
-        0 2px 6px rgba(255, 183, 77, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        0 6px 16px rgba(0, 0, 0, 0.08),
+        0 1px 4px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
 
       &::before {
         left: 100%;
@@ -398,18 +400,18 @@
 
     &:has(input:checked) {
       background: linear-gradient(135deg, var(--accent) 0%, #e8a532 100%);
-      border-color: var(--accent);
+      border-color: rgba(255, 183, 77, 0.8);
       color: var(--ink);
       font-weight: var(--weight-semibold);
       transform: translateY(-1px);
       box-shadow:
-        0 8px 25px rgba(255, 183, 77, 0.25),
-        0 2px 8px rgba(255, 183, 77, 0.3),
+        0 6px 20px rgba(255, 183, 77, 0.3),
+        0 2px 6px rgba(255, 183, 77, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
 
       .hero__option-description {
-        color: rgba(26, 26, 26, 0.8);
+        color: rgba(26, 26, 26, 0.85);
       }
 
       &::before {
@@ -419,7 +421,7 @@
 
     &:has(input:focus-visible) {
       outline: 2px solid var(--secondary);
-      outline-offset: 3px;
+      outline-offset: 2px;
     }
 
     &:active {
