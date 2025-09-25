@@ -1,0 +1,312 @@
+// Design Tokens
+// Coffee Subscription App
+
+// === CSS Custom Properties Root ===
+:root {
+  // Colors
+  --coffee-100: #F8F5F2;
+  --coffee-300: #E7DDD5;
+  --coffee-600: #8D6B55;
+  --coffee-800: #4A3326;
+  --accent-amber: #FFB74D;
+  --accent-forest: #2D6A4F;
+  --ink: #1A1A1A;
+  --white: #FFFFFF;
+
+  // Semantic colors
+  --primary: var(--coffee-800);
+  --primary-light: var(--coffee-600);
+  --secondary: var(--accent-forest);
+  --accent: var(--accent-amber);
+  --background: var(--coffee-100);
+  --surface: var(--white);
+  --surface-elevated: var(--coffee-300);
+  --text-primary: var(--ink);
+  --text-secondary: var(--coffee-600);
+  --text-tertiary: var(--coffee-800);
+
+  // Spacing Scale (8px base)
+  --space-xs: 0.25rem;  // 4px
+  --space-sm: 0.5rem;   // 8px
+  --space-md: 1rem;     // 16px
+  --space-lg: 1.5rem;   // 24px
+  --space-xl: 2rem;     // 32px
+  --space-2xl: 2.5rem;  // 40px
+  --space-3xl: 3rem;    // 48px
+  --space-4xl: 4rem;    // 64px
+  --space-5xl: 5rem;    // 80px
+  --space-6xl: 6rem;    // 96px
+
+  // Border Radius
+  --radius-sm: 0.5rem;   // 8px
+  --radius-md: 0.75rem;  // 12px
+  --radius-lg: 1.5rem;   // 24px
+  --radius-xl: 2rem;     // 32px
+  --radius-full: 9999px;
+
+  // Shadows
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glass: 0 8px 32px rgba(74, 51, 38, 0.12);
+
+  // Typography Scale
+  --text-xs: 0.75rem;     // 12px
+  --text-sm: 0.875rem;    // 14px
+  --text-base: 1rem;      // 16px
+  --text-lg: 1.125rem;    // 18px
+  --text-xl: 1.25rem;     // 20px
+  --text-2xl: 1.5rem;     // 24px
+  --text-3xl: 1.875rem;   // 30px
+  --text-4xl: 2.25rem;    // 36px
+  --text-5xl: 3rem;       // 48px
+  --text-6xl: 3.75rem;    // 60px
+
+  // Fluid Typography
+  --text-display: clamp(2rem, 5vw, 3.5rem);  // 32px - 56px
+  --text-hero: clamp(1.5rem, 4vw, 2.5rem);   // 24px - 40px
+  --text-body: clamp(1rem, 2vw, 1.125rem);   // 16px - 18px
+
+  // Line Heights
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  // Font Weights
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  // Easing Functions
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  // Animation Durations
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  // Breakpoints (for JS usage)
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+
+  // Layout
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+
+  // Z-index scale
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+// === SCSS Variables (mapped from CSS custom properties) ===
+
+// Colors
+$coffee-100: var(--coffee-100);
+$coffee-300: var(--coffee-300);
+$coffee-600: var(--coffee-600);
+$coffee-800: var(--coffee-800);
+$accent-amber: var(--accent-amber);
+$accent-forest: var(--accent-forest);
+$ink: var(--ink);
+$white: var(--white);
+
+// Semantic colors
+$primary: var(--primary);
+$primary-light: var(--primary-light);
+$secondary: var(--secondary);
+$accent: var(--accent);
+$background: var(--background);
+$surface: var(--surface);
+$surface-elevated: var(--surface-elevated);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-tertiary: var(--text-tertiary);
+
+// Spacing
+$space-xs: var(--space-xs);
+$space-sm: var(--space-sm);
+$space-md: var(--space-md);
+$space-lg: var(--space-lg);
+$space-xl: var(--space-xl);
+$space-2xl: var(--space-2xl);
+$space-3xl: var(--space-3xl);
+$space-4xl: var(--space-4xl);
+$space-5xl: var(--space-5xl);
+$space-6xl: var(--space-6xl);
+
+// Breakpoints for mixins
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px
+);
+
+// === Mixins ===
+
+// Responsive breakpoint mixin
+@mixin bp($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$size}";
+  }
+}
+
+// Container mixin
+@mixin container() {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+
+  @include bp(sm) { max-width: var(--container-sm); }
+  @include bp(md) { max-width: var(--container-md); }
+  @include bp(lg) { max-width: var(--container-lg); }
+  @include bp(xl) { max-width: var(--container-xl); }
+  @include bp(2xl) { max-width: var(--container-2xl); }
+}
+
+// Glass card effect
+@mixin glass-card() {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+}
+
+// Button base styles
+@mixin button-base() {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  line-height: var(--leading-tight);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out-cubic);
+  min-height: 44px; // Accessibility: minimum tap target
+
+  &:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Primary button
+@mixin button-primary() {
+  @include button-base();
+  background: var(--primary);
+  color: var(--white);
+
+  &:hover:not(:disabled) {
+    background: var(--primary-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Form input base
+@mixin input-base() {
+  appearance: none;
+  background: var(--surface);
+  border: 2px solid var(--coffee-300);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  transition: border-color var(--duration-normal) var(--ease-out-cubic);
+  min-height: 44px; // Accessibility: minimum tap target
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  &::placeholder {
+    color: var(--text-secondary);
+  }
+
+  &:disabled {
+    background: var(--coffee-100);
+    cursor: not-allowed;
+  }
+}
+
+// Smooth scroll
+@mixin smooth-scroll() {
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+// Visually hidden (for screen readers)
+@mixin visually-hidden() {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Truncate text
+@mixin truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Multi-line truncate
+@mixin truncate-lines($lines: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}

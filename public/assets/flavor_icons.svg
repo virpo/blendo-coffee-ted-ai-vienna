@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100">
+  <!-- Chocolate -->
+  <g id="chocolate" transform="translate(0, 0)">
+    <circle cx="50" cy="50" r="30" fill="#6B3410" opacity="0.9"/>
+    <rect x="35" y="35" width="30" height="30" rx="5" fill="#8B4513"/>
+    <rect x="40" y="40" width="5" height="5" fill="#D2B48C"/>
+    <rect x="50" y="40" width="5" height="5" fill="#D2B48C"/>
+    <rect x="40" y="50" width="5" height="5" fill="#D2B48C"/>
+    <rect x="50" y="50" width="5" height="5" fill="#D2B48C"/>
+  </g>
+
+  <!-- Caramel -->
+  <g id="caramel" transform="translate(100, 0)">
+    <circle cx="50" cy="50" r="30" fill="#D2691E" opacity="0.9"/>
+    <path d="M35 45 Q50 35 65 45 Q50 55 35 45" fill="#FFB74D"/>
+    <path d="M38 50 Q50 40 62 50 Q50 60 38 50" fill="#FFA726"/>
+  </g>
+
+  <!-- Citrus -->
+  <g id="citrus" transform="translate(200, 0)">
+    <circle cx="50" cy="50" r="30" fill="#FF8F00" opacity="0.9"/>
+    <circle cx="50" cy="50" r="20" fill="#FFA726"/>
+    <path d="M35 50 L65 50 M50 35 L50 65 M42 42 L58 58 M58 42 L42 58" stroke="#FFD54F" stroke-width="2"/>
+  </g>
+
+  <!-- Berry -->
+  <g id="berry" transform="translate(300, 0)">
+    <circle cx="50" cy="50" r="30" fill="#8E24AA" opacity="0.9"/>
+    <ellipse cx="50" cy="45" rx="15" ry="20" fill="#9C27B0"/>
+    <circle cx="45" cy="40" r="3" fill="#E1BEE7"/>
+    <circle cx="55" cy="42" r="2" fill="#E1BEE7"/>
+    <circle cx="50" cy="38" r="2" fill="#E1BEE7"/>
+    <path d="M50 25 Q52 30 50 35 Q48 30 50 25" fill="#4CAF50"/>
+  </g>
+
+  <!-- Nutty -->
+  <g id="nutty" transform="translate(400, 0)">
+    <circle cx="50" cy="50" r="30" fill="#8D6E63" opacity="0.9"/>
+    <ellipse cx="50" cy="50" rx="18" ry="12" fill="#A1887F"/>
+    <ellipse cx="50" cy="50" rx="12" ry="8" fill="#D7CCC8"/>
+    <path d="M42 50 Q50 45 58 50 Q50 55 42 50" fill="#BCAAA4"/>
+  </g>
+
+  <!-- Floral -->
+  <g id="floral" transform="translate(500, 0)">
+    <circle cx="50" cy="50" r="30" fill="#E91E63" opacity="0.9"/>
+    <circle cx="45" cy="40" r="8" fill="#F06292"/>
+    <circle cx="55" cy="40" r="8" fill="#F06292"/>
+    <circle cx="40" cy="55" r="8" fill="#F06292"/>
+    <circle cx="60" cy="55" r="8" fill="#F06292"/>
+    <circle cx="50" cy="50" r="6" fill="#FFE082"/>
+  </g>
+
+  <!-- Spicy -->
+  <g id="spicy" transform="translate(600, 0)">
+    <circle cx="50" cy="50" r="30" fill="#D32F2F" opacity="0.9"/>
+    <path d="M50 25 Q45 35 40 50 Q45 65 50 75 Q55 65 60 50 Q55 35 50 25" fill="#F44336"/>
+    <path d="M50 30 Q48 35 47 45 Q48 55 50 65 Q52 55 53 45 Q52 35 50 30" fill="#FF5722"/>
+    <circle cx="48" cy="40" r="1" fill="#FFEB3B"/>
+    <circle cx="52" cy="45" r="1" fill="#FFEB3B"/>
+  </g>
+
+  <!-- Text labels -->
+  <text x="50" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4A3326">Chocolate</text>
+  <text x="150" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4A3326">Caramel</text>
+  <text x="250" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4A3326">Citrus</text>
+  <text x="350" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4A3326">Berry</text>
+  <text x="450" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4A3326">Nutty</text>
+  <text x="550" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4A3326">Floral</text>
+  <text x="650" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4A3326">Spicy</text>
+</svg>
